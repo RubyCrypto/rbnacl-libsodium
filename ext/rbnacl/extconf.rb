@@ -19,7 +19,6 @@ LIBSODIUM_DIR = File.expand_path(File.join(CWD, '..', '..', 'vendor', 'libsodium
 MAKE = ENV['MAKE'] || ENV['make'] || "make"
 
 Dir.chdir(LIBSODIUM_DIR) do
-  sys("./autogen.sh")
   sys("./configure --prefix=#{LIBSODIUM_DIR}/dist")
   sys(MAKE)
   sys("#{MAKE} install")
