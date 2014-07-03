@@ -1,3 +1,7 @@
+0.6.0 (2014-07-03)
+------------------
+* Update to libsodium 0.6.0
+
 0.5.0.1 (2014-06-14)
 --------------------
 * Run autogen.sh in advance so systems without autotools still work
