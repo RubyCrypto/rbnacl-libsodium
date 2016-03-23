@@ -19,9 +19,14 @@ LIBSODIUM_DIR = File.expand_path(File.join(CWD, '..', '..', 'vendor', 'libsodium
 MAKE = ENV['MAKE'] || ENV['make'] || "make"
 
 Dir.chdir(LIBSODIUM_DIR) do
-  sys("./configure --prefix=#{LIBSODIUM_DIR}/dist")
+  # sh is required to run configure on Windows
+  sys("sh -c \"./configure --prefix=#{LIBSODIUM_DIR}/dist\"")
   sys(MAKE)
   sys("#{MAKE} install")
+  if !Dir.glob('dist/bin/libsodium*.dll').empty?
+    # copy dll to make it loadable on Windows
+    sys("cp dist/bin/libsodium*.dll dist/lib/libsodium.so")
+  end
 end
 
 File.open("Makefile", "w") do |f|
