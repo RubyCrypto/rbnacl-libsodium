@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
+gemspec
+
 gem "rbnacl", github: 'cryptosphere/rbnacl'
 
-# Specify your gem's dependencies in rbnacl-libsodium.gemspec
-gemspec
+group :development, :test do
+  gem "rspec", "~> 3"
+end
