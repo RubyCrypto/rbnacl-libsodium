@@ -23,10 +23,6 @@ Dir.chdir(LIBSODIUM_DIR) do
   sys("sh -c \"./configure --prefix=#{LIBSODIUM_DIR}/dist\"")
   sys(MAKE)
   sys("#{MAKE} install")
-  if !Dir.glob('dist/bin/libsodium*.dll').empty?
-    # copy dll to make it loadable on Windows
-    sys("cp dist/bin/libsodium*.dll dist/lib/libsodium.so")
-  end
 end
 
 File.open("Makefile", "w") do |f|
