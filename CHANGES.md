@@ -1,3 +1,8 @@
+1.0.9 (2015-04-02)
+------------------
+* Update to libsodium 1.0.9
+* Windows support fixups
+
 1.0.8 (2015-12-26)
 ------------------
 * Update to libsodium 1.0.8
