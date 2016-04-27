@@ -12,7 +12,7 @@ module RbNaCl
       def sodiumlib_glob
         case RUBY_DESCRIPTION
         when /darwin/ then 'libsodium*.dylib'
-        when /Windows|(win|mingw)32/ then 'libsodium*.dll'
+        when /Windows|(win|mingw)32/ then '../bin/libsodium*.dll'
         when /openbsd/ then 'libsodium*.so.*'
         else 'libsodium*.so'
         end
