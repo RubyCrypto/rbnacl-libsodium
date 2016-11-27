@@ -1,9 +1,13 @@
-1.0.10 (2015-04-16)
+1.0.11 (2016-11-27)
+-------------------
+* Update to libsodium 1.0.11
+
+1.0.10 (2016-04-16)
 -------------------
 * Update to libsodium 1.0.10
 * Windows support fixups, take 2 (hopefully actually working)
 
-1.0.9 (2015-04-02)
+1.0.9 (2016-04-02)
 ------------------
 * Update to libsodium 1.0.9
 * Windows support fixups
