@@ -1,3 +1,8 @@
+1.0.15 (2017-11-08)
+-------------------
+* Update to libsodium 1.0.15
+* OpenBSD support
+
 1.0.13 (2017-08-15)
 -------------------
 * Update to libsodium 1.0.13
