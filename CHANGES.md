@@ -1,3 +1,7 @@
+1.0.15.1 (2017-11-08)
+---------------------
+* Run autogen.sh prior to release. D'oh!
+
 1.0.15 (2017-11-08)
 -------------------
 * Update to libsodium 1.0.15
