@@ -2,7 +2,10 @@ require "rbnacl/libsodium/version"
 
 module RbNaCl
   module Libsodium
-    sodiumlib_dir = File.expand_path("../../../vendor/libsodium/dist/lib/", __FILE__)
+    sodiumlib32_dir = File.expand_path("../../../vendor/libsodium/dist/lib/", __FILE__)
+    sodiumlib64_dir = File.expand_path("../../../vendor/libsodium/dist/lib64/", __FILE__)
+    libsodium_dirs  = [sodiumlib32_dir, sodiumlib64_dir]
+    sodiumlib_dir   = libsodium_dirs.select { |dir| Dir.exist?(dir) }.first
 
     sodiumlib_glob = case RUBY_DESCRIPTION
     when /darwin/ then "libsodium*.dylib"
