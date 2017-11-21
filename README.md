@@ -1,6 +1,8 @@
 RbNaCl::Libsodium
 =================
-[![Gem Version](https://badge.fury.io/rb/rbnacl-libsodium.png)](http://badge.fury.io/rb/rbnacl-libsodium)
+[![Gem Version](https://badge.fury.io/rb/rbnacl-libsodium.svg)](http://badge.fury.io/rb/rbnacl-libsodium)
+[![Build Status](https://travis-ci.org/cryptosphere/rbnacl-libsodium.svg?branch=master)](https://travis-ci.org/cryptosphere/rbnacl-libsodium)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/cryptosphere/rbnacl-libsodium/blob/master/LICENSE.txt)
 
 [RbNaCl] is a Ruby wrapper for [libsodium], a portable version of the Networking and
 Cryptography library ([NaCl]) created by Daniel J. Bernstein.
