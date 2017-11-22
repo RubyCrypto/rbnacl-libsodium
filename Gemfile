@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem "rbnacl", github: 'cryptosphere/rbnacl'
+gem "rbnacl", git: 'https://github.com/cryptosphere/rbnacl.git'
 
 group :development, :test do
   gem "rspec", "~> 3"
