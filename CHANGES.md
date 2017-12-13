@@ -1,3 +1,11 @@
+# 1.0.16 (2017-12-13)
+
+* Update to libsodium 1.0.16
+* Add `rake gem:windows` to cross-compile Windows binary releases
+* Windows DLL path fixups
+* Support for 64-bit library pathnames
+* Drop suppoort for Ruby <2.2 (to match RbNaCl itself)
+
 # 1.0.15.1 (2017-11-08)
 
 * Run autogen.sh prior to release. D'oh!

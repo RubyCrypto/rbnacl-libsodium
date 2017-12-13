@@ -1,5 +1,5 @@
 module RbNaCl
   module Libsodium
-    VERSION = '1.0.15.1'
+    VERSION = '1.0.16'
   end
 end
