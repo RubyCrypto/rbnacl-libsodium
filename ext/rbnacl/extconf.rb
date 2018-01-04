@@ -1,10 +1,11 @@
-require 'mkmf'
+# frozen_string_literal: true
+
+require "mkmf"
 
 def sys(cmd)
   puts " -- #{cmd}"
-  unless ret = system(cmd)
-    raise "ERROR: '#{cmd}' failed"
-  end
+  ret = system(cmd)
+  raise "ERROR: '#{cmd}' failed" unless ret
   ret
 end
 
@@ -17,20 +18,18 @@ clean:
 MAKEFILE
 
 HOST = arg_config("--host")
-OPTIONS = []
-if HOST
-  OPTIONS << "--host=#{HOST}"
-end
+OPTIONS = [].freeze
+OPTIONS << "--host=#{HOST}" if HOST
 
-CWD = File.expand_path(File.dirname(__FILE__))
-LIBSODIUM_DIR = File.expand_path(File.join(CWD, '..', '..', 'vendor', 'libsodium'))
-MAKE = ENV['MAKE'] || ENV['make'] || "make"
-if HOST
-  # install to the stage directory for rake-compiler
-  DIST = File.expand_path(File.join(CWD, '..', '..', 'tmp', RUBY_PLATFORM, 'stage', 'vendor', 'libsodium', 'dist'))
-else
-  DIST = "#{LIBSODIUM_DIR}/dist"
-end
+CWD = __dir__
+LIBSODIUM_DIR = File.expand_path(File.join(CWD, "..", "..", "vendor", "libsodium"))
+MAKE = ENV["MAKE"] || ENV["make"] || "make"
+DIST = if HOST
+         # install to the stage directory for rake-compiler
+         File.expand_path(File.join(CWD, "..", "..", "tmp", RUBY_PLATFORM, "stage", "vendor", "libsodium", "dist"))
+       else
+         "#{LIBSODIUM_DIR}/dist".freeze
+       end
 
 Dir.chdir(LIBSODIUM_DIR) do
   # sh is required to run configure on Windows
