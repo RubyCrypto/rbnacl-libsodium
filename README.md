@@ -36,3 +36,10 @@ Or install it yourself as:
     require 'rbnacl/libsodium'
 
 will tweak search path allowing `rbnacl` to find bundled `libsodium`
+
+## License
+
+Copyright (c) 2012-2018 Tony Arcieri, Distributed under the MIT License.
+See [LICENSE] for further details.
+
+[LICENSE]: https://github.com/crypto-rb/rbnacl/blob/master/LICENSE
