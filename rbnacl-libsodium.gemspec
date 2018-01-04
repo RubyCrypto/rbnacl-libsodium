@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.date          = Time.now.strftime('%Y-%m-%d')
   spec.email         = ["kron82@gmail.com", "bascule@gmail.com"]
   spec.summary       = %q{rbnacl with bundled libsodium}
-  spec.homepage      = "https://github.com/cryptosphere/rbnacl-libsodium"
+  spec.homepage      = "https://github.com/crypto-rb/rbnacl-libsodium"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
