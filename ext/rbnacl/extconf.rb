@@ -23,7 +23,7 @@ OPTIONS << "--host=#{HOST}" if HOST
 
 CWD = __dir__
 LIBSODIUM_DIR = File.expand_path(File.join(CWD, "..", "..", "vendor", "libsodium"))
-MAKE = ENV["MAKE"] || ENV["make"] || "make"
+MAKE ||= ENV["MAKE"] || ENV["make"] || "make"
 DIST = if HOST
          # install to the stage directory for rake-compiler
          File.expand_path(File.join(CWD, "..", "..", "tmp", RUBY_PLATFORM, "stage", "vendor", "libsodium", "dist"))
