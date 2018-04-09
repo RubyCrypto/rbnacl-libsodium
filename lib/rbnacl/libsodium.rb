@@ -5,9 +5,12 @@ module RbNaCl
   module Libsodium
     class << self
       def sodiumlib_dir
-        sodiumlib32_dir = File.expand_path("../../../vendor/libsodium/dist/lib/", __FILE__)
-        sodiumlib64_dir = File.expand_path("../../../vendor/libsodium/dist/lib64/", __FILE__)
-        [sodiumlib32_dir, sodiumlib64_dir].select { |dir| Dir.exist?(dir) }.first
+        dist_dirs = ["tmp/#{RUBY_PLATFORM}/stage/vendor/libsodium/dist", "vendor/libsodium/dist"]
+        lib_dirs = %w[lib lib64]
+        sodiumlib_dirs = dist_dirs.product(lib_dirs).map do |dist_dir, lib_dir|
+          File.expand_path("../../../#{dist_dir}/#{lib_dir}/", __FILE__)
+        end
+        sodiumlib_dirs.select { |dir| Dir.exist?(dir) }.first
       end
 
       def sodiumlib_glob
