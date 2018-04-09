@@ -7,7 +7,7 @@ RSpec::Core::RakeTask.new
 require "rubocop/rake_task"
 RuboCop::RakeTask.new
 
-task default: %w[spec rubocop]
+task default: %w[libsodium spec rubocop]
 
 MAKE = ENV["MAKE"] || ENV["make"] || "make"
 RUBY_CC_VERSION = ENV["RUBY_CC_VERSION"] || "2.3.0"
@@ -18,6 +18,16 @@ task "gem:windows" do
   RakeCompilerDock.sh "cd vendor/libsodium && #{MAKE} clean" if File.exist? "vendor/libsodium/Makefile"
   sh "bundle package" # Avoid repeated downloads of gems by using gem files from the host.
   RakeCompilerDock.sh "bundle --local && RUBY_CC_VERSION=#{RUBY_CC_VERSION} rake cross native gem"
+end
+
+desc "Run autogen"
+task :autogen do
+  cd("vendor/libsodium") { sh "./autogen.sh" }
+end
+
+desc "Compile libsodium"
+task libsodium: :autogen do
+  cd("ext/rbnacl") { load "extconf.rb" }
 end
 
 spec = Gem::Specification.load("rbnacl-libsodium.gemspec")
