@@ -1,9 +1,21 @@
-RbNaCl::Libsodium
-=================
+# RbNaCl::Libsodium
+
 [![Gem Version](https://badge.fury.io/rb/rbnacl-libsodium.svg)](http://badge.fury.io/rb/rbnacl-libsodium)
 [![Build Status](https://travis-ci.org/crypto-rb/rbnacl-libsodium.svg?branch=master)](https://travis-ci.org/crypto-rb/rbnacl-libsodium)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/crypto-rb/rbnacl-libsodium/blob/master/LICENSE.txt)
 [![Gitter Chat](https://badges.gitter.im/badge.svg)](https://gitter.im/crypto-rb/Lobby)
+[![Maintained: no](https://img.shields.io/maintenance/no/2017.svg)](https://github.com/crypto-rb/rbnacl-libsodium/issues/29)
+
+## DISCONTINUED
+
+**THIS GEM HAS OFFICIALLY BEEN DISCONTINUED**.
+
+Please use your operating system's package manager to install libsodium
+when using RbNaCl. For more information, see:
+
+https://github.com/crypto-rb/rbnacl/wiki/Installing-libsodium
+
+## About
 
 [RbNaCl] is a Ruby wrapper for [libsodium], a portable version of the Networking and
 Cryptography library ([NaCl]) created by Daniel J. Bernstein.
